@@ -3,8 +3,9 @@
 "use strict";
 
 // Constructor for pizza
-function Pizza(size, toppings) {
+function Pizza(size, crust, toppings) {
   this.size = size;
+  this.crust = crust;
   this.toppings = toppings;
   this.show = true;
 }
@@ -21,92 +22,52 @@ Pizzas.prototype.addPizza = function(pizza) {
 }
 
 var sizes = ["Small", "Medium", "Large"];
+var crusts = ["Original crust", "Gluten-friendly crust"];
 
-// function Topping(name, price) {
-//   this.name = name;
-//   this.price = price;
-// }
+// Constructor for topping
+function Topping(name, price) {
+  this.name = name;
+  this.price = price;
+}
 
-var crustTopping = [{
-  name: "original crust",
-  price: 3
-}, {
-  name: "gluten-friendly crust",
-  price: 3.5
-}];
-var cheeseTopping = [{
-  name: "dairy-free cheese",
-  price: 0.7
-}, {
-  name: "feta",
-  price: 0.5
-}, {
-  name: "gorgonzola",
-  price: 0.6
-}, {
-  name: "mozzarella",
-  price: 0.4
-}, {
-  name: "parmesan",
-  price: 0.6
-}];
-var veggiesTopping = [{
-  name: "artichokes",
-  price: 0.4
-}, {
-  name: "black olives",
-  price: 0.4
-}, {
-  name: "jalapenos",
-  price: 0.2
-}, {
-  name: "mushrooms",
-  price: 0.2
-}, {
-  name: "red peppers",
-  price: 0.2
-}, {
-  name: "spinach",
-  price: 0.2
-}, {
-  name: "tomatoes",
-  price: 0.2
-}];
-var meetTopping = [{
-  name: "anchovies",
-  price: 1.5
-}, {
-  name: "bacon",
-  price: 1.8
-}, {
-  name: "grilled chicken",
-  price: 1.5
-}, {
-  name: "pepperoni",
-  price: 1.6
-}, {
-  name: "salami",
-  price: 1.5
-}];
-var sauceTopping = [{
-  name: "bbq swirl",
-  price: 0.4
-}, {
-  name: "hot buffalo sauce",
-  price: 0.4
-}, {
-  name: "ranch finish",
-  price: 0.4
-}, {
-  name: "pesto drizzle",
-  price: 0.4
-}];
+var cheeseToppings = [
+  new Topping("Dairy-free cheese", 0.7),
+  new Topping("Feta", 0.5),
+  new Topping("Gorgonzola", 0.6),
+  new Topping("Mozzarella", 0.4),
+  new Topping("Parmesan", 0.6),
+];
 
-var allToppings = [crustTopping, cheeseTopping, veggiesTopping, meetTopping, sauceTopping];
+var veggieToppings = [
+  new Topping("Artichokes", 0.4),
+  new Topping("Black olives", 0.4),
+  new Topping("Jalapenos", 0.2),
+  new Topping("Mushrooms", 0.2),
+  new Topping("Red peppers", 0.2),
+  new Topping("Spinach", 0.2),
+  new Topping("Tomatoes", 0.2),
+];
+
+var meetToppings = [
+  new Topping("Anchovies", 1.5),
+  new Topping("Bacon", 1.8),
+  new Topping("Grilled chicken", 1.5),
+  new Topping("Pepperoni", 1.6),
+  new Topping("Salami", 1.5),
+];
+
+var sauceToppings = [
+  new Topping("BBQ swirl", 0.4),
+  new Topping("Hot buffalo sauce", 0.4),
+  new Topping("Ranch finish", 0.4),
+  new Topping("Pesto drizzle", 0.4),
+];
+
 
 Pizza.prototype.calculatePrice = function(basePrice) {
   var price = basePrice;
   var size = this.size;
+  var crust = this.crust;
   var toppings = this.toppings;
 
   if (size == "Small") {
@@ -117,40 +78,63 @@ Pizza.prototype.calculatePrice = function(basePrice) {
     price = price + 9
   }
 
+  if (crust == "Original crust") {
+    price = price + 3
+  } else {
+    price = price + 3.5
+  }
+
   toppings.forEach(function(topping) {
     price = price + topping.price
   })
   return price
 }
 
-// var p = new Pizza("Small", [{name: "original", price: 3}, {name: "hot buffalo sauce", price: 0.4}])
-// console.log(p.calculatePrice(5))
-
 
 // User Interface Logic
 
 $(document).ready(function() {
+  cheeseToppings.forEach(function(t) {
+    $("#cheese-check-label").show();
+    $("#cheese").append('<input type="checkbox" name="cheese" value="' + t.name + '">' + t.name + '<br>');
+  });
+  veggieToppings.forEach(function(t) {
+    $("#veggie-check-label").show();
+    $("#veggie").append('<input type="checkbox" name="veggie" value="' + t.name + '">' + t.name + '<br>');
+  });
+  meetToppings.forEach(function(t) {
+    $("#meet-check-label").show();
+    $("#meet").append('<input type="checkbox" name="meet" value="' + t.name + '">' + t.name + '<br>');
+  });
+  sauceToppings.forEach(function(t) {
+    $("#sauce-check-label").show();
+    $("#sauce").append('<input type="checkbox" name="sauce" value="' + t.name + '">' + t.name + '<br>');
+  });
+  
   $("#pizza").submit(function(event) {
     event.preventDefault();
-    var chosenSize = $("input:radio[name=size]:checked").val();
-    var chosenToppingsNames = [];
-    $("input:checkbox:checked").each(function() {
-      chosenToppingsNames.push($(this).val());
-    });
-    var chosenToppings = [];
-    chosenToppingsNames.forEach(function(toppingName) {
-      allToppings.forEach(function(toppingCategory) {
-        toppingCategory.forEach(function(topping) {
-          if (topping.name == toppingName) {
-            chosenToppings.push(topping)
-          }
-        });
-      });
-    });
 
-    var basePrice = 5;
-    var pizza =  new Pizza (chosenSize, chosenToppings);
-    var pizzaPrice = pizza.calculatePrice(basePrice);
-    $("#pizzaPrice").text("Your pizza is " + chosenSize + " size with " + chosenToppingsNames + " toppings is cost " + "$" + pizzaPrice);
+
+    //
+    // var chosenSize = $("input:radio[name=size]:checked").val();
+    // var chosenToppingsNames = [];
+    // $("input:checked").each(function() {
+    //   chosenToppingsNames.push($(this).val());
+    // });
+    // var chosenToppings = [];
+    // chosenToppingsNames.forEach(function(toppingName) {
+    //   allToppings.forEach(function(toppingCategory) {
+    //     toppingCategory.forEach(function(topping) {
+    //       if (topping.name == toppingName) {
+    //         chosenToppings.push(topping)
+    //       }
+    //     });
+    //   });
+    // });
+    //
+    // var basePrice = 5;
+    // var pizza =  new Pizza (chosenSize, chosenToppings);
+    // var pizzaPrice = pizza.calculatePrice(basePrice);
+    // $("#pizzaPrice").text("Your pizza is " + chosenSize + " size with " + chosenToppingsNames + " toppings is cost " + "$" + pizzaPrice);
   });
 });

@@ -12,62 +12,47 @@
 <body>
   <div class="container">
     <h1>Create your own pizza</h1>
-    <div id = "pizza">
-    <form id="size">
-      <h4>Choose size: </h4>
-      <div class="radio">
-        <label><input type="radio" name="size" value="Small" checked>Small</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="size" value="Medium">Medium</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="size" value="Large">Large</label>
-      </div>
-      </form>
-      <h4>Choose toppings: </h4>
-      <form id = "toppings">
-        <div class = "form-group">
-          <p>Pizza crust</p>
-          <input type="checkbox" name="crust" value="original" checked>Original<br>
-          <input type="checkbox" name="crust" value="glutenFriendly">Gluten friendly<br>
+    <div id="pizza">
+      <form id="size">
+        <h4>Choose size: </h4>
+        <div class="radio">
+          <label><input type="radio" name="size" value="Small">Small</label>
         </div>
-      <div class="form-group">
-        <p>Cheese toppings</p>
-        <input type="checkbox" name="cheese" value="diaryFreeCheese">Dairy-free cheese<br>
-        <input type="checkbox" name="cheese" value="feta" checked>Feta<br>
-        <input type="checkbox" name="cheese" value="gorgonzola">Gorgonzola<br>
-        <input type="checkbox" name="cheese" value="mozzarella">Mozzarella<br>
-        <input type="checkbox" name="cheese" value="parmesan">Parmesan<br>
-      </div>
-      <div class="form-group">
-        <p>Veggie toppings</p>
-        <input type="checkbox" name="veg" value="artichokes">Artichokes<br>
-        <input type="checkbox" name="veg" value="blackOlives">Black olives<br>
-        <input type="checkbox" name="veg" value="jalapenos">Jalapenos<br>
-        <input type="checkbox" name="veg" value="mushrooms" checked>Mushrooms<br>
-        <input type="checkbox" name="veg" value="rPeppers">Red peppers<br>
-        <input type="checkbox" name="veg" value="spinach">Spinach<br>
-        <input type="checkbox" name="veg" value="tomatoes">Tomatoes<br>
-      </div>
-      <div class="form-group">
-        <p>Meet toppings</p>
-        <input type="checkbox" name="meet" value="anchovies">Anchovies<br>
-        <input type="checkbox" name="meet" value="bacon">Bacon<br>
-        <input type="checkbox" name="meet" value="chicken" checked>Grilled chicken<br>
-        <input type="checkbox" name="meet" value="pepperoni">Pepperoni<br>
-        <input type="checkbox" name="meet" value="salami">Salami<br>
-      </div>
-      <div class="form-group">
-        <p>Sauce</p>
-        <input type="checkbox" name="sauce" value="bbq">BBQ swirl<br>
-        <input type="checkbox" name="sauce" value="buffalo">Hot buffalo sauce<br>
-        <input type="checkbox" name="sauce" value="ranch" checked>Ranch finish<br>
-        <input type="checkbox" name="sauce" value="pesto">Pesto drizzle<br>
-      </div>
-    <button id="btn" type="submit" class="btn">Order</button>
-  </form>
-  </div>
+        <div class="radio">
+          <label><input type="radio" name="size" value="Medium">Medium</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="size" value="Large">Large</label>
+        </div>
+      </form>
+
+      <form id="crust">
+        <h4>Choose crust: </h4>
+        <div class="radio">
+          <label><input type="radio" name="crust" value="original">Original crust</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="crust" value="gluten-free">Gluten-friendly crust</label>
+        </div>
+      </form>
+
+      <form id="toppings">
+        <h4>Choose toppings: </h4>
+        <div id="cheese" class="form-group">
+          <p id="cheese-check-label">Cheese toppings</p>
+        </div>
+        <div id="veggie" class="form-group">
+          <p id="veggie-check-label">Veggie toppings</p>
+        </div>
+        <div id="meet" class="form-group">
+          <p id="meet-check-label">Meet toppings</p>
+        </div>
+        <div id="sauce" class="form-group">
+          <p id="sauce-check-label">Sauce</p>
+        </div>
+        <button id="btn" type="submit" class="btn">Order</button>
+      </form>
+    </div>
     <div id="pizzaPrice">
     </div>
   </div>
