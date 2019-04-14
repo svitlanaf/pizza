@@ -7,7 +7,7 @@ body {
 }
 
 #toppings {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 #pizza-image {
@@ -20,31 +20,47 @@ body {
   margin-left: 20px;
 }
 
-input[type='radio']:checked:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 16px;
-  top: -2px;
-  left: -1px;
-  position: relative;
-  background-color: #bc2500;
-  content: '';
+.my-container {
+  margin: 0 0 1em;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
   display: inline-block;
-  visibility: visible;
-  border: 2px solid white;
+  padding-left: 1.2em;
+  position: relative;
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+label::before {
+  background: #f4e5c6;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 15px;
+  width: 15px;
+  left: 0;
+  position: absolute;
+  top: .27em;
+}
+
+input:checked+label::before {
+  background: #bc2500;
 }
 
 input[type='checkbox']:checked:after {
   width: 15px;
   height: 15px;
-  top: -2px;
   left: -1px;
   position: relative;
   background-color: #bc2500;
   content: '';
   display: inline-block;
   visibility: visible;
-  border: 2px solid white;
 }
 
 #add-to-cart {
@@ -56,11 +72,55 @@ input[type='checkbox']:checked:after {
   margin-left: 17px;
   height: 40px;
   width: 150px;
+  margin-top: 62px;
+}
+
+#your-cart {
+  background-color: #f4e5c6;
+  color: #bc2500;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 250px;
+  height: 40px;
+  width: 150px;
+  margin-top: -62px;
+}
+
+#menu {
+  background-color: #bc2500;
+  color: #f4e5c6;
+  font-size: 15px;
+  font-weight: bold;
+  margin-right: 500px;
+  margin-left: 0px;
+  height: 40px;
+  width: 150px;
   margin-top: 60px;
 }
 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  /* changed */
+  outline: 3px solid #f4e5c6;
+  outline-offset: -2px;
+}
+
+#your-cart.btn:focus,
+#your-cart.btn:active:focus,
+#your-cart.btn.active:focus,
+#your-cart.btn.focus,
+#your-cart.btn:active.focus,
+#your-cart.btn.active.focus {
+  /* changed */
+  outline: 3px solid #bc2500;
+  outline-offset: -2px;
+}
+
 .panel-info {
-  /* margin: 12px; */
   background-color: transparent;
   border: 0;
   color: white;
@@ -70,7 +130,7 @@ input[type='checkbox']:checked:after {
   font-size: 16px;
 }
 
-.panel-info > .panel-heading {
+.panel-info>.panel-heading {
   background-color: transparent;
   color: #f4e5c6;
   border-color: #bc2500;
@@ -80,3 +140,22 @@ h2.panel-title {
   font-size: 20px;
   color: #f6d996;
 }
+
+h2, .h2 {
+  color: #f6d996;
+}
+
+ #pizza-panel-.panel {
+   background-color: transparent;
+   border-color: #bc2500;
+   color: white;
+   margin-top: 20px;
+   margin-bottom: 10px;
+ }
+
+ #pizza-panel-.panel-default > .panel-heading {
+   color: #f6d996;
+   background-color: transparent;
+   border-color: transparent;
+
+ }

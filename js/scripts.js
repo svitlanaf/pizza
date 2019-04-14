@@ -86,13 +86,14 @@ $(document).ready(function() {
   $("#size-crust").hide();
   $("#toppings").hide();
   $("#order").hide();
-  // $("#product-quantity").hide();
+  $("#show-cart").hide();
 
   $("#pizza-image").click(function(event) {
     event.preventDefault();
     $("#pizza-image").hide();
     $("#size-crust").fadeIn();
     $("#toppings").fadeIn();
+    $("#show-cart").show();
 
   cheeseToppings.forEach(function(t) {
     $("#cheese").append('<input type="checkbox" name="cheese" value="' + t.name + '">' + t.name + '<br>');
@@ -106,45 +107,14 @@ $(document).ready(function() {
   sauceToppings.forEach(function(t) {
     $("#sauce").append('<input type="checkbox" name="sauce" value="' + t.name + '">' + t.name + '<br>');
   });
-
-//   $("button").on("click", function(ev) {
-//   var currentQty = $('input[name="quantity"]').val();
-//   var qtyDirection = $(this).data("direction");
-//   var newQty = 0;
-//
-//   if (qtyDirection == "1") {
-//     newQty = parseInt(currentQty) + 1;
-//   }
-//   else if (qtyDirection == "-1") {
-//     newQty = parseInt(currentQty) - 1;
-//   }
-//
-//   // make decrement disabled at 1
-//   if (newQty == 1) {
-//     $(".decrement-quantity").attr("disabled", "disabled");
-//   }
-//
-//   // remove disabled attribute on subtract
-//   if (newQty > 1) {
-//     $(".decrement-quantity").removeAttr("disabled");
-//   }
-//
-//   if (newQty > 0) {
-//     newQty = newQty.toString();
-//     $('input[name="quantity"]').val(newQty);
-//   }
-//   else {
-//     $('input[name="quantity"]').val("1");
-//   }
-// });
 });
 
   $("#pizza").submit(function(event) {
     event.preventDefault();
-    $("#order").show();
+    $("#order").fadeIn();
     $("#size-crust").hide();
     $("#toppings").hide();
-    // $("#quantity-selectors-container").hide();
+    $("#show-cart").hide();
     var chosenSize = $("input:radio[name=size]:checked").val();
     var chosenCrust = $("input:radio[name=crust]:checked").val();
     var chosenToppingsNames = [];
@@ -170,17 +140,25 @@ $(document).ready(function() {
     var chosenPizzas = [];
     chosenPizzas.push(pizza);
     $('#pizza-panels').prepend(
-      '<div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' +"Your pizza: "  + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: "  + pizzaPriceRound + '</p></div></div>'
+      '<div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' +"Your pizza"  + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: "  + pizzaPriceRound + '</p></div></div>'
     );
-    // $('input[type=radio]').prop('checked', false);
     $('input[type=checkbox]').prop('checked', false);
-
   });
+
+  $("#show-cart").click(function(event) {
+    event.preventDefault();
+    $("#order").fadeIn();
+    $("#show-cart").hide();
+    $("#size-crust").hide();
+    $("#toppings").hide();
+    $("#show-cart").hide();
+});
 
   $("#menu").click(function(event) {
     event.preventDefault();
     $("#order").hide();
-    $("#size-crust").show();
-    $("#toppings").show();
+    $("#show-cart").fadeIn();
+    $("#size-crust").fadeIn();
+    $("#toppings").fadeIn();
 });
 });

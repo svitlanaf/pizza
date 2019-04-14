@@ -13,7 +13,7 @@
   <div class="container">
     <a href="index.html"><img id="pizza-image" border="0" src="img/1.png" alt="Pizza" width="650" height="700"></a>
     <div id="pizza">
-      <div id = "size-crust" class="row">
+      <div id="size-crust" class="row">
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">
@@ -21,31 +21,31 @@
             </div>
             <div class="panel-body">
               <form id="size">
-                <div class="radio">
-                  <input type="radio" name="size" value="Small" checked/>
-                  <label>Small</label>
-                  <input type="radio" name="size" value="Medium" />
-                  <label>Medium</label>
-                  <input type="radio" name="size" value="Large" />
-                  <label>Large</label>
+                <div class="my-container">
+                  <input type="radio" name="size" value="Small" id="size-small" checked />
+                  <label for="size-small">Small</label>
+                  <input type="radio" name="size" value="Medium" id="size-medium" />
+                  <label for="size-medium">Medium</label>
+                  <input type="radio" name="size" value="Large" id="size-large" />
+                  <label for="size-large">Large</label>
                 </div>
               </form>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class=" col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">
               <h2 class="panel-title">Choose crust</h2>
             </div>
             <div class="panel-body">
               <form id="crust">
-                <div class="radio">
-                  <input type="radio" name="crust" value="Original crust" checked />
-                  <label>Original crust</label>
-                  <input type="radio" name="crust" value="Gluten-friendly crust" />
-                  <label>Gluten-friendly crust</label>
+                <div class="my-container">
+                  <input type="radio" name="crust" value="Original crust" id="crust-orig" checked />
+                  <label for="crust-orig">Original crust</label>
+                  <input type="radio" name="crust" value="Gluten-friendly crust" id="crust-gf" />
+                  <label for="crust-gf">Gluten-friendly crust</label>
                 </div>
               </form>
             </div>
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div id = "toppings" class="row">
+      <div id="toppings" class="row">
         <form id="all-toppings">
           <div class="col-md-3">
             <div class="panel panel-info">
@@ -105,14 +105,16 @@
           <button id="add-to-cart" type="submit" class="btn">Add to Cart</button>
         </form>
       </div>
-      </div>
-      <div id = "order">
-        <h2>Your Cart</h2>
+    </div>
+    <div id="show-cart">
+      <button id="your-cart" type="submit" class="btn">Your Cart</button>
+    </div>
+    <div id="order">
+      <h2>Cart</h2>
       <div id="pizza-panels">
-        </div>
-        <button id="menu" type="submit" class="btn">Back to Menu</button>
       </div>
-
+      <button id="menu" type="submit" class="btn">Back to Menu</button>
+    </div>
   </div>
 
 </body>
