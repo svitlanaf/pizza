@@ -13,49 +13,108 @@
   <div class="container">
     <a href="index.html"><img id="pizza-image" border="0" src="img/1.png" alt="Pizza" width="650" height="700"></a>
     <div id="pizza">
-      <form id="size">
-        <h4>Choose size: </h4>
-        <div class="radio">
-          <label><input type="radio" name="size" value="Small">Small</label>
+      <div id = "size-crust" class="row">
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h2 class="panel-title">Choose size</h2>
+            </div>
+            <div class="panel-body">
+              <form id="size">
+                <div class="radio">
+                  <input type="radio" name="size" value="Small" checked/>
+                  <label>Small</label>
+                  <input type="radio" name="size" value="Medium" />
+                  <label>Medium</label>
+                  <input type="radio" name="size" value="Large" />
+                  <label>Large</label>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="radio">
-          <label><input type="radio" name="size" value="Medium">Medium</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="size" value="Large">Large</label>
-        </div>
-      </form>
 
-      <form id="crust">
-        <h4>Choose crust: </h4>
-        <div class="radio">
-          <label><input type="radio" name="crust" value="Original crust">Original crust</label>
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h2 class="panel-title">Choose crust</h2>
+            </div>
+            <div class="panel-body">
+              <form id="crust">
+                <div class="radio">
+                  <input type="radio" name="crust" value="Original crust" checked />
+                  <label>Original crust</label>
+                  <input type="radio" name="crust" value="Gluten-friendly crust" />
+                  <label>Gluten-friendly crust</label>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="radio">
-          <label><input type="radio" name="crust" value="Gluten-friendly crust">Gluten-friendly crust</label>
-        </div>
-      </form>
-
-      <form id="toppings">
-        <h4>Choose toppings: </h4>
-        <div id="cheese" class="form-group">
-          <p id="cheese-check-label">Cheese toppings</p>
-        </div>
-        <div id="veggie" class="form-group">
-          <p id="veggie-check-label">Veggie toppings</p>
-        </div>
-        <div id="meet" class="form-group">
-          <p id="meet-check-label">Meet toppings</p>
-        </div>
-        <div id="sauce" class="form-group">
-          <p id="sauce-check-label">Sauce</p>
-        </div>
-        <button id="btn" type="submit" class="btn">Order</button>
-      </form>
-    </div>
-    <div id = "pizza-panels">
       </div>
+
+      <div id = "toppings" class="row">
+        <form id="all-toppings">
+          <div class="col-md-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h2 class="panel-title">Cheese toppings</h2>
+              </div>
+              <div class="panel-body">
+                <div id="cheese" class="form-group">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h2 class="panel-title">Veggie toppings</h2>
+              </div>
+              <div class="panel-body">
+                <div id="veggie" class="form-group">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h2 class="panel-title">Meet toppings</h2>
+              </div>
+              <div class="panel-body">
+                <div id="meet" class="form-group">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h2 class="panel-title">Sauce</h2>
+              </div>
+              <div class="panel-body">
+                <div id="sauce" class="form-group">
+                </div>
+              </div>
+            </div>
+          </div>
+          <button id="add-to-cart" type="submit" class="btn">Add to Cart</button>
+        </form>
+      </div>
+      </div>
+      <div id = "order">
+        <h2>Your Cart</h2>
+      <div id="pizza-panels">
+        </div>
+        <button id="menu" type="submit" class="btn">Back to Menu</button>
+      </div>
+
   </div>
+
 </body>
 
 </html>
