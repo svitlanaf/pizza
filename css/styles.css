@@ -1,0 +1,9 @@
+body {
+  background-color: #232323;
+}
+
+#pizza-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
