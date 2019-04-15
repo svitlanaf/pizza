@@ -157,5 +157,10 @@ h2, .h2 {
    color: #f6d996;
    background-color: transparent;
    border-color: transparent;
-
  }
+
+ #pizza3 {
+   float: right;
+   margin: -40px;
+   margin-left: 400px;
+  }

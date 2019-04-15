@@ -1,4 +1,4 @@
-# _**Pizzeria Webpage**_
+# _**Make Your Own Pizza Webpage**_
 
 ## _Creating a webpage using HTML, CSS, JavaScript and jQuery 3/29/2019_
 
@@ -6,7 +6,8 @@
 
 ## Description
 
-_This page is created using HTML, CSS, JavaScript and jQuery._
+_On this page users can make their own pizza by choosing ingredients, add their pizzas to cart and get the price._
+_Open a web page, click on the picture of pizza, choose one type of size, one type of crust and as many toppings as you wish. Click on the "Add to cart" button to see your selected ingredients and pizza price. Click on "Back to Menu" button to choose another pizza. You can check all added pizzas by clicking on the "Your cart" button._
 
 ## Setup/Installation Requirements
 
@@ -15,7 +16,7 @@ _This page is created using HTML, CSS, JavaScript and jQuery._
 * _Find HTML file and open using any web browser._
 
 ## Known Bugs
-_No new bugs found during testing._
+_No bugs found during testing._
 
 ## Support and contact details
 

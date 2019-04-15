@@ -87,6 +87,7 @@ $(document).ready(function() {
   $("#toppings").hide();
   $("#order").hide();
   $("#show-cart").hide();
+  $("#pizza3").hide();
 
   $("#pizza-image").click(function(event) {
     event.preventDefault();
@@ -95,19 +96,36 @@ $(document).ready(function() {
     $("#toppings").fadeIn();
     $("#show-cart").show();
 
-  cheeseToppings.forEach(function(t) {
-    $("#cheese").append('<input type="checkbox" name="cheese" value="' + t.name + '">' + t.name + '<br>');
+    cheeseToppings.forEach(function(t) {
+      $("#cheese").append('<input type="checkbox" name="cheese" value="' + t.name + '">' + t.name + '<br>');
+    });
+    veggieToppings.forEach(function(t) {
+      $("#veggie").append('<input type="checkbox" name="veggie" value="' + t.name + '">' + t.name + '<br>');
+    });
+    meetToppings.forEach(function(t) {
+      $("#meet").append('<input type="checkbox" name="meet" value="' + t.name + '">' + t.name + '<br>');
+    });
+    sauceToppings.forEach(function(t) {
+      $("#sauce").append('<input type="checkbox" name="sauce" value="' + t.name + '">' + t.name + '<br>');
+    });
   });
-  veggieToppings.forEach(function(t) {
-    $("#veggie").append('<input type="checkbox" name="veggie" value="' + t.name + '">' + t.name + '<br>');
+
+  $("#show-cart").click(function(event) {
+    event.preventDefault();
+    $("#order").fadeIn();
+    $("#show-cart").hide();
+    $("#size-crust").hide();
+    $("#toppings").hide();
+    $("#show-cart").hide();
   });
-  meetToppings.forEach(function(t) {
-    $("#meet").append('<input type="checkbox" name="meet" value="' + t.name + '">' + t.name + '<br>');
+
+  $("#menu").click(function(event) {
+    event.preventDefault();
+    $("#order").hide();
+    $("#show-cart").fadeIn();
+    $("#size-crust").fadeIn();
+    $("#toppings").fadeIn();
   });
-  sauceToppings.forEach(function(t) {
-    $("#sauce").append('<input type="checkbox" name="sauce" value="' + t.name + '">' + t.name + '<br>');
-  });
-});
 
   $("#pizza").submit(function(event) {
     event.preventDefault();
@@ -134,31 +152,20 @@ $(document).ready(function() {
     });
 
     var basePrice = 5;
-    var pizza =  new Pizza (chosenSize, chosenCrust, chosenToppings);
+    var pizza = new Pizza(chosenSize, chosenCrust, chosenToppings);
     var pizzaPrice = pizza.calculatePrice(basePrice);
     var pizzaPriceRound = pizzaPrice.toFixed(2);
     var chosenPizzas = [];
     chosenPizzas.push(pizza);
     $('#pizza-panels').prepend(
-      '<div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' +"Your pizza"  + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: "  + pizzaPriceRound + '</p></div></div>'
+      '<div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' + "Your pizza" + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: " + pizzaPriceRound + '</p></div></div><img id="pizza3" border="0" src="img/pizza3.png" alt="Mashrooms and meat pizza" height = "200", weight = "200">'
     );
+    // $("#pizza3").fadeIn();
     $('input[type=checkbox]').prop('checked', false);
+
+    // var pizzasPrices = [];
+    // pizzasPrices.push(pizzaPrice)
+    // console.log(pizzasPrices)
+
   });
-
-  $("#show-cart").click(function(event) {
-    event.preventDefault();
-    $("#order").fadeIn();
-    $("#show-cart").hide();
-    $("#size-crust").hide();
-    $("#toppings").hide();
-    $("#show-cart").hide();
-});
-
-  $("#menu").click(function(event) {
-    event.preventDefault();
-    $("#order").hide();
-    $("#show-cart").fadeIn();
-    $("#size-crust").fadeIn();
-    $("#toppings").fadeIn();
-});
 });
