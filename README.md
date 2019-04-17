@@ -13,14 +13,14 @@ _Choose one type of size, one type of crust and as many toppings as you wish. Cl
 
 _Input: Size: Small. Crust: Original. Toppings: Parmesan, Tomatoes, Salami, Hot buffalo sauce._
 
-_Output:
+_Output:_
 
 _Your pizza_
 _Size: Small_
 _Crust: Original crust_
-_Toppings: Parmesan, Tomatoes, Salami, Hot buffalo sauce_
+_Toppings: Parmesan, Tomatoes, Salami, Hot buffalo sauce._
 
-_Price: $14.70_
+_Price: $14.70._
 
 _An image of a pizza._
 
