@@ -17,7 +17,9 @@ _Output:_
 
 _Your pizza_
 _Size: Small_
+
 _Crust: Original crust_
+
 _Toppings: Parmesan, Tomatoes, Salami, Hot buffalo sauce._
 
 _Price: $14.70._
