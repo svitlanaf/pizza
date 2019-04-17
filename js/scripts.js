@@ -60,24 +60,24 @@ Pizza.prototype.calculatePrice = function(basePrice) {
   var toppings = this.toppings;
 
   if (size == "Small") {
-    price = price + 4
+    price = price + 4;
   } else if (size == "Medium") {
-    price = price + 6
+    price = price + 6;
   } else {
     price = price + 9
   }
 
   if (crust == "Original crust") {
-    price = price + 3
+    price = price + 3;
   } else {
-    price = price + 3.50
+    price = price + 3.50;
   }
 
   toppings.forEach(function(topping) {
-    price = price + topping.price
-  })
+    price = price + topping.price;
+  });
   return price
-}
+};
 
 // User Interface Logic
 
@@ -145,7 +145,7 @@ $(document).ready(function() {
       allToppings.forEach(function(toppingCategory) {
         toppingCategory.forEach(function(topping) {
           if (topping.name == toppingName) {
-            chosenToppings.push(topping)
+            chosenToppings.push(topping);
           }
         });
       });
@@ -158,14 +158,10 @@ $(document).ready(function() {
     var chosenPizzas = [];
     chosenPizzas.push(pizza);
     $('#pizza-panels').prepend(
-      '<div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' + "Your pizza" + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: " + pizzaPriceRound + '</p></div></div><img id="pizza3" border="0" src="img/pizza3.png" alt="Mashrooms and meat pizza" height = "200", weight = "200">'
+      '<img id="pizza3" border="0" src="img/pizza3.png" alt="Mashrooms and meat pizza" height = "200", weight = "200"><div id="pizza-panel-' + '"class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">' + "Your pizza" + '</h4></div><div class="panel-body"><p> ' + "Size: " + chosenSize + '<br>' + "Crust: " + chosenCrust + "<br>" + "Toppings: " + chosenToppingsNames.join(', ') + "<br>" + "Price: $" + pizzaPriceRound + '</p></div></div>'
     );
-    // $("#pizza3").fadeIn();
     $('input[type=checkbox]').prop('checked', false);
 
-    // var pizzasPrices = [];
-    // pizzasPrices.push(pizzaPrice)
-    // console.log(pizzasPrices)
 
   });
 });

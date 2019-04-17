@@ -96,6 +96,7 @@ input[type='checkbox']:checked:after {
   height: 40px;
   width: 150px;
   margin-top: 60px;
+  margin-bottom: 20px;
 }
 
 .btn:focus,
@@ -146,11 +147,10 @@ h2, .h2 {
 }
 
  #pizza-panel-.panel {
+   margin-top: 30px;
    background-color: transparent;
    border-color: #bc2500;
    color: white;
-   margin-top: 20px;
-   margin-bottom: 10px;
  }
 
  #pizza-panel-.panel-default > .panel-heading {
@@ -161,6 +161,6 @@ h2, .h2 {
 
  #pizza3 {
    float: right;
-   margin: -40px;
-   margin-left: 400px;
+   margin-top: 15px;
+   margin-right: 10px;
   }
