@@ -16,6 +16,7 @@ _Input: Size: Small. Crust: Original. Toppings: Parmesan, Tomatoes, Salami, Hot 
 _Output:_
 
 _Your pizza_
+
 _Size: Small_
 
 _Crust: Original crust_
