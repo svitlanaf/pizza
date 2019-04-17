@@ -17,9 +17,9 @@ _Output:_
 
 _Your pizza_
 
-_Size: Small_
+_Size: Small._
 
-_Crust: Original crust_
+_Crust: Original crust._
 
 _Toppings: Parmesan, Tomatoes, Salami, Hot buffalo sauce._
 
